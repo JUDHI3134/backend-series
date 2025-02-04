@@ -16,10 +16,10 @@ app.use(cors({
     credentials: true
 }
 ))
-app.use(express.json({ limit: "16kb" }))
-app.use(express.urlencoded({ extended: true, limit: "16kb" }))
-app.use(express.static("public"))
-app.use(cookieParser())
+app.use(express.json({ limit: "16kb" })) // accept json like data from req.body
+app.use(express.urlencoded({ extended: true, limit: "16kb" })) //set our url encoded for ex. %20 -> space in browser url section
+app.use(express.static("public")) //used to store static file in serve / local
+app.use(cookieParser()) //used to access or set the browser cookie specially we can do crud with cookie
 
 //DB Connection
 connectDB()
